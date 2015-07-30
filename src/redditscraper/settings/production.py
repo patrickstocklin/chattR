@@ -14,7 +14,7 @@ from django.conf import settings
 if not settings.DEBUG:
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
     import os
-    print "Production"
+    
 
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -22,11 +22,9 @@ if not settings.DEBUG:
     # Quick-start development settings - unsuitable for production
     # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
-    # SECURITY WARNING: keep the secret key used in production secret!
-    SECRET_KEY = 'd=kuaqj!&nm@*^g4a_l-io+&+mm73s#=dt!&s0%i39*(2#fsm)'
 
     # SECURITY WARNING: don't run with debug turned on in production!
-    DEBUG = True
+    DEBUG = False
 
     ALLOWED_HOSTS = ['patstocklin.webfactional.com']
 
