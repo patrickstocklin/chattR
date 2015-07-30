@@ -2,8 +2,6 @@ from django.shortcuts import render
 
 from .models import SearchBox
 from .forms import SearchBoxForm
-#import json as simplejson
-#import Scraper Script
 import scraper
 
 
