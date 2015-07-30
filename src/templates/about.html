@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<p align=left>This website allows a user to observe what trending topics are currently being discussed and shared on a particular subreddit. After entering a subreddit in mind, the website peeks and reports back with several items:</p> 
+	<ol>
+		<li align=left>What is most frequently being talked about (all words are run through a filter of the English language's most common words),</l1>
+		<li align=left>The average Flesch-Kincaid Grade Level of all recently-commented redditors, and finally,</li>
+		<li align=left>The subreddit's averaged 'sentiment', including the subjectivity and polarity of discussions.</li> 
+	</ol>
+
+<br>
+
+<p align=left><a href="https://en.wikipedia.org/wiki/Flesch–Kincaid_readability_tests" color=gray><u>The Flesch-Kincaid Grade Level</u></a> is a metric used to gauge an individual's aptitude for writing. The F-K score takes into account a document's total number of words, sentences, and syllables. While it is worth noting that not everybody on Reddit comments under the assumption someone will examine their writing, it is interesting to note the observable discrepencies of writing levels across different communities and their respective subject matters. More can be read on the Flesch-Kincaid Formula <a href="https://en.wikipedia.org/wiki/Flesch–Kincaid_readability_tests"><u>here</u></a>.</p>
+
+<br>
+
+<p align=left> For grabbing comments and submissions on Reddit, I used <a href="http://praw.readthedocs.org/en/v3.1.0/"><u>PRAW</u></a>, the Python Reddit API Wrapper. For language processing and parsing, I used python's Natural Language Toolkit, <a href="http://www.nltk.org"><u>NLTK</u></a>. For sentiment analysis, I used python's <a href="https://textblob.readthedocs.org/en/dev/"><u>TextBlob</u></a> library. A subreddit's sentiment includes both its Polarity, how positive/negative a community's attitude is, and its Subjectivity, how objective/subjective the content of a thread is. For comparison visualization across Reddit's most popular subreddits, I used <a href="http://bokeh.pydata.org/en/latest/"><u>Bokeh</u></a>. The website was built using <a href="https://www.djangoproject.com"><u>Django</u></a> 1.8 (Flask probably would have been more well-suited for this exercise) and uses <a href="http://getbootstrap.com"><u>Bootstrap</u></a> for stylistic purposes.  </p>
+
+<br>
+
+<p align=left>Shout out to my boy, Nate</p>
+
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+
+
+
+{% block content %}
+
+{% if queried %}
+{% else %}<h2>Peek a subreddit, any subreddit...</h2>
+<br>
+<p>...and wait about 20 seconds :)<br><br><br><br><br>
+{% endif %}
+
+<form value='hmm' method = 'POST' action = ''>{% csrf_token %}
+
+{{ searchBar|crispy }}
+
+<input class='btn btn-default' type='submit' value='Search' />
+
+</form>
+
+<br>
+
+{% if queried %}
+
+<p>Number of comments gathered (rec. 50+): 
+	{% if numberOfComments < 50 %} <font color=red>{{ numberOfComments }}</font></p>
+	{% elif numberOfComments > 200 %} <font color=green>{{ numberOfComments }}</font><p>
+	{% else %}<font color=yellow>{{ numberOfComments }} </font></p>
+	{% endif %}
+<p>{{ title }}'s Flesch-Kincaid Grade Level: 
+	{% if results < 5 %} <font color=red>{{ results }}</font></p>
+	{% elif results > 9 %} <font color=green>{{ results }}</font></p>
+	{% else %}{{ results }}</p>
+	{% endif %}
+<p>{{ title }}'s Polarity Level (-1: Negative / +1: Positive):
+	{% if polarity < 0.1 %} <font color=red>{{ polarity }}</font></p>
+	{% elif polarity > 0.3 %} <font color=green>{{ polarity }}</font><p>
+	{% else %}{{ polarity }}</p>
+	{% endif %}
+<p>{{ title }}'s Subjectivity Level (0: Objective / +1: Opinionated): {{ subjectivity }}</p>
+
+<br>
+
+<p align=LEFT>
+	<font size="4">
+	{{ title }}'s most common words:
+	</font>
+	<font size="4">
+	[{{ buzzwords }}]
+	</font>
+</p>
+
+
+<!-- <table class='table'>
+{% for item in buzzwords %}
+	<tr><td>{{ forloop.counter }}</td><td>{{ item }}</td>
+{% endfor %}		
+</table>
+ -->
+{% endif %}
+
+<br><br><br>
+
+<p>"Discussion is an exchange of knowledge; an argument an exchange of ignorance" -
+Robert Quillen</p>
+
+{% endblock %}
+
