@@ -17,8 +17,7 @@ from django.conf import settings
 from django.conf.urls import include, url
 from django.contrib import admin
 from django.conf.urls.static import static
-#from django.utils import simplejson
-#import json as simplejson
+
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
@@ -31,11 +30,9 @@ urlpatterns = [
 
     #Results Page
 
-    #Contact Page
+    #Conpare Page
     url(r'^compare/', 'searchsubreddit.views.compare', name='compare'),
 
-    #ProgressBar (issue with importing simplejson )
-    #url(r'^progressbarupload/', include('progressbarupload.urls')),
 ]
 
 if settings.DEBUG:
