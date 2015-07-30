@@ -40,10 +40,7 @@ def countSyllables(buzzwordDict, word):
     word = word.lower().strip(".:;?!,/<>\-*")
         
     if len(word) == 0:
-        #print "No Word"
-        #print initialWord
         return 0
-        #FIND A WAY TO MAKE THIS WORK
     if "http" in word:
         print "+++++++++++++++++++"
         print "Link"
@@ -118,7 +115,7 @@ def calculateScore(buzzwordDict, writingText):
 def main(desiredSubreddit):
 	r = praw.Reddit("A Scraper Script "
 	                "by u/DontKillTheMedic, v 1.0.")
-	r.login('WritingLevelBot', 'mybotpassword')
+	r.login('WritingLevelBot', '')
 
 	subreddits = [desiredSubreddit]              
 	commentList = []
