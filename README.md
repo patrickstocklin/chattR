@@ -2,7 +2,7 @@
 
 Small web-application for subreddit-analysis
 
-Hosted @ www.patstocklin.webfactional.com
+Hosted @ patstocklin.webfactional.com
 
 This website allows a user to observe what trending topics are currently being discussed and shared on a particular subreddit. After entering a subreddit in mind, the website peeks and reports back with several items: 
 	 What is most frequently being talked about (all words are run through a filter of the English language's most common words),
